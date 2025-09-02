@@ -4,8 +4,11 @@ function App() {
 
   return (
     <>
-      <h1> Holidays List</h1>
+    <main>
+      <h1> random-notes</h1>
        < TaskForm onAddTask={(task) => console.log(task)} />
+
+    </main>
     </>
   )
 }
