@@ -22,8 +22,8 @@ body {
   font-family: "Space Mono", monospace;
   background-image: url("src/assets/back.jpg");
   background-size: cover;   
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position: center; 
+  background-repeat: repeat-y;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -33,24 +33,44 @@ main {
   flex-direction: column;
   height: 100vh;
   text-align: center;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
 }
 
 h1 {
   font-family: "Space Mono", monospace;
   font-weight: 700;
   font-size: 50px;
+  color:rgb(73, 72, 72)
 }
 
-input {
+textarea {
   font-family: "Space Mono", monospace;
   font-weight: 400;
   font-size: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  height: 160px;
+  width: 90%;         
+  max-width: 550px;    
+  min-width: 280px; 
 }
 
-button {
+.edit-textarea {
+  width: 100%;  
+  min-width: 120px;   
+  height: auto; 
+}
+
+button , .btn-add{
   border-radius:5px;
   border: 1px solid rgb(193, 187, 187);
   cursor: pointer;
@@ -58,33 +78,96 @@ button {
   font-weight: 400;
   font-size: 20px;
   padding: 10px;
-  margin: 20px;
+  margin-top: 10px;
   background-color: #f1ecec; 
   color: rgb(53, 124, 224);
+  box-shadow:  3px 3px rgba(0, 0, 0, 0.15);
+}
+button:hover {
+  background-color: #65b1f0;
+  color: rgb(251, 251, 251);
+}
+
+.btn-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  justify-content:flex-start;
+  align-items: flex-start;
+  overflow-y: auto;
+  max-height: 400px;
 }
 
 li{
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   font-family: "Space Mono", monospace;
   font-weight: 400;
   font-size: 20px;
   background-color: #f1ecec;
-  margin: 4px;
+  margin: 8px;
+  padding: 10px;
   border: 1px solid rgb(193, 187, 187);
+  box-shadow:  3px 3px rgba(0, 0, 0, 0.15);
   border-radius:5px;
   width: 200px;
 }
 
-button:hover {
-  background-color: #83a6ed;
-  color: rgb(251, 251, 251);
+@media (max-width: 480px){
+  form {
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    width: 280px;
+    height: 120px;
+    font-size: 16px;
+  }
+
+  .edit-textarea {
+    width: 120px;
+    height: 80px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  button  {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  .btn-add {
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  ul {
+    width: 100%;
+    margin: 0 auto;
+    justify-content:center;
+  }
+
+  li {
+    width: 140px;
+    font-size: 16px;
+    padding: 8px;
+  }
 }
+
+
 

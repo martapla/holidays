@@ -17,13 +17,12 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="text"
+            <textarea
                 value={task}
                 onChange={(e) => setTask(e.target.value)}
                 placeholder="write a note..."
             />
-            <button type="submit">Add </button>
+            <button type="submit" className='btn-add'>Add </button>
         </form>
     );
 };
