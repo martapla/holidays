@@ -5,7 +5,7 @@ import TaskModel from '../models/task.model';
 // GET all tasks
 export const getTasks = async (req: Request, res: Response) => {
     try {
-      // Aquí iría la lógica para obtener los usuarios de la base de datos
+      // users database
       const tasks = await TaskModel.find()
       res.status(200).json({ message: 'List of tasks', data: tasks });
     } catch (error) {

@@ -1,10 +1,20 @@
 import React from 'react';
 import TaskItem from './TaskItem';
 
+// interface TaskListProps {
+//   tasks: string[];
+//   onDelete: (index: number) => void;
+//   onEdit: (index: number, newTask: string) => void;
+// }
+interface Task {
+  _id: string;
+  taskname: string;
+}
+
 interface TaskListProps {
-  tasks: string[];
-  onDelete: (index: number) => void;
-  onEdit: (index: number, newTask: string) => void;
+  tasks: Task[];
+  onDelete: (id: string) => void;
+  onEdit: (id: string, newTask: string) => void;
 }
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, onDelete, onEdit }) => {
@@ -12,9 +22,8 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onDelete, onEdit }) => {
     <ul>
       {tasks.map((task, index) => (
         <TaskItem 
-          key={index} 
+          key={task._id}
           task={task} 
-          index={index} 
           onDelete={onDelete} 
           onEdit={onEdit}
         />

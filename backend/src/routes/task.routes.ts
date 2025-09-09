@@ -1,12 +1,13 @@
 import { Router } from "express";
-import { getTasks, createTask } from "../controller/task.controller";
+import { getTasks, createTask, updateTask, deleteTask } from "../controller/task.controller";
 
 const router = Router();
    
-// Define the route for getting all users
+// CRUD
 router.get("/", getTasks);
-// Define the route for creating a new user
-router.post('/', createTask);
+router.post("/", createTask);
+router.put("/:id", updateTask);
+router.delete("/:id", deleteTask);
 
 
 

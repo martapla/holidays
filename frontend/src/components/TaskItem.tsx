@@ -1,19 +1,24 @@
 import { useState } from 'react';
 
-interface TaskItemProps {
-  task: string;
-  index: number;
-  onDelete: (index: number) => void;
-  onEdit: (index: number, newTask: string) => void; 
+interface Task {
+  _id: string;
+  taskname: string;
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({ task, index, onDelete, onEdit }) => {
+interface TaskItemProps {
+  task: Task;
+  onDelete: (id: string) => void;
+  onEdit: (id: string, newTask: string) => void;
+}
+
+
+const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onEdit }) => {
 
   const [isEditing, setIsEditing] = useState(false);
-  const [newText, setNewText] = useState(task);
+  const [newTask, setNewTask] = useState(task.taskname);
 
   const handleSave = () => {
-    onEdit(index, newText);
+    onEdit(task._id, newTask);
     setIsEditing(false);
   };
 
@@ -23,17 +28,17 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, index, onDelete, onEdit }) =>
       <>
         <textarea
           className='edit-textarea'
-          value={newText} 
-          onChange={(e) => setNewText(e.target.value)} 
+          value={newTask} 
+          onChange={(e) => setNewTask(e.target.value)} 
         />
         <button onClick={handleSave}>💾</button>
       </>
     ) : (
       <>
-        <p>{task} </p>
+        <p>{task.taskname} </p>
         <div className='btn-items'>
             <button onClick={() => setIsEditing(true)}>✏️</button>
-            <button onClick={() => onDelete(index)}>🗑️</button>
+            <button onClick={() => onDelete(task._id)}>🗑️</button>
         </div>
       </>
     )}
