@@ -3,7 +3,7 @@
 This is a Full Stack Project that implements a basic CRUD application.
 It allows users to manage personal notes in a simple and intuitive way.
 
-![img demo](<frontend/assets/readme.png>)
+![img demo](<frontend/src/assets/readme.png>)
 
 
 
