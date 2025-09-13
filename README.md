@@ -3,11 +3,11 @@
 This is a Full Stack Project that implements a basic CRUD application.
 It allows users to manage personal notes in a simple and intuitive way.
 
-![img demo](<readme.png>)
+![img demo](<frontend/assets/readme.png>)
 
 
 
-## ✨ Features
+## Features ✨ 
 
 With Random-Notes App you can:
 
@@ -30,7 +30,7 @@ With Random-Notes App you can:
 - MVC basic arquitecture
 
 
-## 🖍️ UX & UI
+##  UX & UI 🖍️
 
 - Fully designed and developed by me.  
 - Built with **Vanilla CSS** from scratch.  
@@ -42,19 +42,19 @@ With Random-Notes App you can:
 
 1. **Clone the repository**
    
-   git clone https://github.com/your-user/random-notes-app.git
-   cd random-notes-app
+   - git clone https://github.com/your-user/random-notes-app.git
+   - cd random-notes-app
 
 2. **Install dependencies**
-   ***👉 Frontend***
-   cd frontend
-   npm install
-   npm run dev
-   ***👉 Backend***
-   cd ../backend
-   npm install
-   npm run dev
+   - ***👉 Frontend***
+   - cd frontend
+   - npm install
+   - npm run dev
+   - ***👉 Backend***
+   - cd ../backend
+   - npm install
+   - npm run dev
 
 3. **Open the app**
-   Once both frontend and backend are running, go to:
-👉 http://localhost:5173
+   - Once both frontend and backend are running, go to:
+     👉 http://localhost:5173
